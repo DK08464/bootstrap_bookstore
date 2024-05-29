@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/599/214/original/book-reading-logo-and-symbols-template-icons-vector.jpg" alt="Logo" width="50" height="50"/>
+            <a class="navbar-brand" href="#">DK Books</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 ml-lg-3">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchBar">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchBtn">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://m.media-amazon.com/images/I/71FSf6i6yvL._SY466_.jpg" class="d-block w-100" alt="Book 1">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://m.media-amazon.com/images/I/51I3Gaqu0zL._SY445_SX342_.jpg" class="d-block w-100" alt="Book 2">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://m.media-amazon.com/images/I/51hQXI2P88L._SY445_SX342_.jpg" class="d-block w-100" alt="Book 3">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Filters and Sorting -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="categoryFilter">Category</label>
+                    <select class="form-control" id="categoryFilter">
+                        <option value="">All</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="sci-fi">Sci-Fi</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="sortFilter">Sort By</label>
+                    <select class="form-control" id="sortFilter">
+                        <option value="relevance">Relevance</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="date">Publication Date</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Cards -->
+    <div class="container mt-5">
+        <div class="row" id="bookCards">
+            <div class="col-md-4 book-card" data-category="non-fiction" data-price="361" data-date="2023-04-15">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/71FSf6i6yvL._SY466_.jpg" class="card-img-top" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">How to be Happy</h5>
+                        <p class="card-text">by Ruskin Bond</p>
+                        <p class="card-text">₹361</p>
+                        <p class="card-text">New book in Ruskin Bond's bestselling How-to series!</p>
+                        <a href="#book-details" class="btn btn-primary">View Details</a>
+                        <button class="btn btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 book-card" data-category="mystery" data-price="639" data-date="2023-03-12">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/A1wUbK1OkpL._SY466_.jpg" class="card-img-top" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">You Like It Darker</h5>
+                        <p class="card-text">by Stephen King</p>
+                        <p class="card-text">₹639</p>
+                        <p class="card-text">A dark and thrilling mystery by Stephen King.</p>
+                        <a href="#book-details1" class="btn btn-primary">View Details</a>
+                        <button class="btn btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 book-card" data-category="sci-fi" data-price="319" data-date="2023-02-25">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/51hQXI2P88L._SY445_SX342_.jpg" class="card-img-top" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">The Black Orphan</h5>
+                        <p class="card-text">by S. Hussain Zaidi</p>
+                        <p class="card-text">₹319</p>
+                        <p class="card-text">A bold and daring sci-fi thriller.</p>
+                        <a href="#book-details2" class="btn btn-primary">View Details</a>
+                        <button class="btn btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Book Details Page -->
+<div id="book-details" class="container mt-5 book-details" >
+    <div class="row">
+        <div class="col-md-4">
+            <img src="https://m.media-amazon.com/images/I/71FSf6i6yvL._SY466_.jpg" class="img-fluid" alt="Book Cover">
+        </div>
+        <div class="col-md-8">
+            <h2>How to be Happy</h2>
+            <h5>by Ruskin Bond</h5>
+            <p>Price: ₹361</p>
+            <p>After the first two bestselling books in the How-to series, Ruskin Bond is back with another book filled with his wonderful nuggets of advice, thoughts and brilliant commentary on life. And this time it is on how to be happy!
+
+                Through the bright, happy pages of this book, Ruskin gives us advice that is sage, doable, relatable and most of all from the heart and the pen of a man who has lived a truly brilliant life.
+                
+                "You can't buy happiness. You can't get it wholesale or retail or online. It inhabits a small space in your mind, and you must look for it there."
+                
+                This is a book that carries decades of experience on how to be contented, how to lead a fulfilling life, how to inhabit the delightful world of books and stories, and most of all on how to be happy!</p>
+            <button class="btn btn-primary">Buy Now</button>
+        </div>
+    </div>
+</div>
+<div id="book-details1" class="container mt-5 book-details">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="https://m.media-amazon.com/images/I/A1wUbK1OkpL._SY466_.jpg" class="img-fluid" alt="Book Cover">
+        </div>
+        <div class="col-md-8">
+            <h2>You Like It Darker</h2>
+            <h5>by Stephen King</h5>
+            <p>Price: ₹639</p>
+            <p>King has, for half a century, been a master of the form, and these stories, about fate, mortality, luck, and the folds in reality where anything can happen, are as rich and riveting as his novels, both weighty in theme and a huge pleasure to read. King writes to feel 'the exhilaration of leaving ordinary day-to-day life behind', and in You Like it Darker, readers will feel that exhilaration too, again and again.
+
+                'Two Talented Bastids' explores the long-hidden secret of how the eponymous gentlemen got their skills. In 'Danny Coughlin's Bad Dream', a brief and unprecedented psychic flash upends dozens of lives, Danny's most catastrophically. In 'Rattlesnakes', a sequel to Cujo, a grieving widower travels to Florida for respite and instead receives an unexpected inheritance - with major strings attached. In 'The Dreamers', a taciturn Vietnam vet answers a job ad and learns that there are some corners of the universe best left unexplored. 'The Answer Man' asks if prescience is good luck or bad and reminds us that a life marked by unbearable tragedy can still be meaningful.
+                
+                King's ability to surprise, amaze, and bring us both terror and solace remains unsurpassed. Each of these stories holds its own thrills, joys, and mysteries; each feels iconic. You like it darker? You got it.</p>
+            <button class="btn btn-primary">Buy Now</button>
+        </div>
+    </div>
+</div>
+<div id="book-details2" class="container mt-5 book-details">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="https://m.media-amazon.com/images/I/51hQXI2P88L._SY445_SX342_.jpg" class="img-fluid" alt="Book Cover">
+        </div>
+        <div class="col-md-8">
+            <h2>The Black Orphan</h2>
+            <h5>by S. Hussain Zaidi</h5>
+            <p>Price: ₹319</p>
+            <p>It's love at first sight for DIG Ajay Rajvardhan of the National Investigation Agency when he sees attractive young lawyer Asiya Khan in court, defending a young woman the NIA has arrested on charges of terrorism. They are on opposite sides - he specializes in taking down terrorists while she defends those wrongfully arrested by the authorities - but he finds he is unable to get her out of his head.
+
+                Even as Ajay and Asiya are drawn closer, a web of crime, deception and intrigue weaves itself around them and threatens to take them down. A serial killer is on the loose, murdering India's most famous nuclear scientists one by one. And something far worse is brewing in the bylanes of Mumbai. Time is running out for Ajay and his associates, Deputy Commissioner Sagar Pratap and Commissioner Neeraj Kumar, to find the mastermind behind these incidents and stop them.
+                
+                Inspired by true events, this riveting tale of love, terror and revenge is Hussain Zaidi at his best.</p>
+            <button class="btn btn-primary">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   <!-- Button trigger modal -->
+<div class="text-center mt-4">
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#contactModal">
+        Contact Us
+    </button>
+</div>
+
+<!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">DK Books</h5>
+                    <p>Address: Sahyadri Campus, Adyar, Mangalore, Karnataka - 575007</p>
+                    <p>Email: info@dkbooks.com</p>
+                    <p>Phone: +91 9874563210</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#!" class="text-dark">Privacy Policy</a></li>
+                        <li><a href="#!" class="text-dark">Terms of Service</a></li>
+                        <li><a href="#!" class="text-dark">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#!" class="text-dark">Facebook</a></li>
+                        <li><a href="#!" class="text-dark">Twitter</a></li>
+                        <li><a href="#!" class="text-dark">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 bg-dark text-white">
+            © 2024 DK Books. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- jQuery and Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script> 
+
+</body>
+</html>

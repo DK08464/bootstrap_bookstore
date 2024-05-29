@@ -1,0 +1,23 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+header {
+    margin-bottom: 20px;
+}
+.carousel-inner {
+    height: 550px; 
+    background-image: url('https://wallpapercave.com/wp/wp9152367.jpg'); 
+}
+.carousel-item img {
+    max-height: 25%;
+    max-width: 25%;
+    display: block;
+    margin: auto;
+    object-fit: contain;
+}
+.card {
+    margin-bottom: 20px;
+}
+footer {
+    margin-top: 20px;
+}
